@@ -22,4 +22,4 @@ app.listen(3000, () => logger.info('API listening on :3000'));
 metricsApp.listen(9100, () => logger.info('Metrics on :9100'));
 
 // Unhandled rejection handler prints stack (for screenshot)
-process.on('unhandledRejection', (err) => logger.error(err, 'Unhandled'));
+// process.on('unhandledRejection', (err) => logger.error(err, 'Unhandled'));
