@@ -17,8 +17,10 @@ router.get('/', (req, res) => {
     // Simulate leak: cache every response forever
     leak(`page-${page}`, slice);
 
-    logger.info({ page, returned: slice.length }, 'List users');
-    res.json({ page, users: slice });
+    console.log('User list fetched', page, slice.length);
+    try {
+        res.json({ page, users: slice });
+    } catch (_) { /* empty on purpose */ }
 });
 
 export default router;
